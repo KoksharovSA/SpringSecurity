@@ -21,8 +21,8 @@ public class SecurityConfig{
                         .requestMatchers("/privateData").hasAnyRole("ADMIN")
                         .anyRequest().authenticated()
                 )
-                .formLogin(login -> login.defaultSuccessUrl("/").permitAll())
-                .logout(logout -> logout.logoutSuccessUrl("/"));
+                .formLogin(login -> login.loginPage("/loginPage").usernameParameter("username").passwordParameter("password").defaultSuccessUrl("/login").permitAll())
+                .logout(logout -> logout.logoutSuccessUrl("/login"));
         return http.build();
     }
 

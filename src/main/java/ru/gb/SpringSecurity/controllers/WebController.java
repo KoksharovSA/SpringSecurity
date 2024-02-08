@@ -16,7 +16,7 @@ public class WebController {
     public String privatePage(){
         return "privateData";
     }
-    @GetMapping("/")
+    @GetMapping("/loginPage")
     public String loginPage(){
         return "loginPage";
     }
